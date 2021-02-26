@@ -10,6 +10,7 @@
     tools:context=".MainActivity">
 
     <EditText
+        android:id="@+id/editDistance"
         android:layout_width="match_parent"
         android:layout_marginTop="8dp"
         android:hint="@string/distancia"
@@ -22,6 +23,7 @@
         android:layout_gravity="center"/>
 
     <EditText
+        android:id="@+id/editPrice"
         android:layout_width="match_parent"
         android:layout_marginTop="32dp"
         android:hint="@string/preco"
@@ -34,6 +36,7 @@
         android:layout_gravity="center"/>
 
     <EditText
+        android:id="@+id/editAutonomy"
         android:layout_width="match_parent"
         android:layout_marginTop="32dp"
         android:hint="@string/autonomia"
@@ -53,6 +56,7 @@
         android:text="@string/gastototal"
         android:layout_gravity="center"/>
     <TextView
+        android:id="@+id/textTotalValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
