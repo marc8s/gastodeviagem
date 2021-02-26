@@ -3,6 +3,7 @@ package com.example.gastodeviagem
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -22,19 +23,28 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun calculate(){
         if(validationOK()){
-            val distance = editDistance.text.toString().toFloat()
-            val price = editPrice.text.toString().toFloat()
-            val autonomy = editAutonomy.text.toString().toFloat()
+            try{
+                val distance = editDistance.text.toString().toFloat()
+                val price = editPrice.text.toString().toFloat()
+                val autonomy = editAutonomy.text.toString().toFloat()
 
-            val totalValue = distance * price / autonomy
-            textTotalValue.text = "R$ ${"%.2f".format(totalValue)}"
+                val totalValue = distance * price / autonomy
+                textTotalValue.text = "R$ ${"%.2f".format(totalValue)}"
+            }catch(nfe: NumberFormatException){
+                Toast.makeText(this, getString(R.string.notifvaloresvalidos), Toast.LENGTH_LONG).show()
+            }
+
+        }else{
+            Toast.makeText(this, getString(R.string.preencha_campos), Toast.LENGTH_LONG).show()
         }
+        //Toast.makeText(this, "Notificação", Toast.LENGTH_LONG).show()
 
     }
 
     private fun validationOK() : Boolean{
         return(editDistance.text.toString() != ""
             && editPrice.text.toString() != ""
-            && editAutonomy.text.toString() != "")
+            && editAutonomy.text.toString() != ""
+            && editAutonomy.text.toString() != "0")
     }
 }

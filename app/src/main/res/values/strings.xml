@@ -9,4 +9,6 @@
     <string name="gastototal">SEU GASTO TOTAL SERÁ DE:</string>
     <string name="calcular">Calcular</string>
     <string name="rstotal">R$ 0</string>
+    <string name="preencha_campos">Preencha todos os campos!</string>
+    <string name="notifvaloresvalidos">Por favor informe valores válidos</string>
 </resources>
